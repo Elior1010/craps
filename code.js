@@ -5,15 +5,16 @@ function playCraps() {
     let sum = die1 + die2; // Calculate the sum of two dice
 
     // Display the dice roll results
-    displayResult(`Dice rolls: ${die1} and ${die2}. Sum: ${sum}. `);
+    let rollMessage = `You rolled: ${die1} and ${die2}. Sum: ${sum}. `;
+    displayResult(rollMessage);
 
     // Determine the game outcome based on Craps rules
     if (sum === 7 || sum === 11) {
-        displayResult("CRAPS – you lose!"); // Player loses if sum is 7 or 11
+        displayResult(rollMessage + "CRAPS – you lose!"); // Player loses if sum is 7 or 11
     } else if (die1 === die2 && die1 % 2 === 0) {
-        displayResult("You won! - Doubles and even"); // Player wins on even doubles
+        displayResult(rollMessage + "You won! - Doubles and even"); // Player wins on even doubles
     } else {
-        displayResult("You pushed!"); // Any other outcome is a push
+        displayResult(rollMessage + "You pushed!"); // Any other outcome is a push
     }
 }
 
